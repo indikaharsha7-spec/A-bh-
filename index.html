@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ABH Motors - Authorized Yamaha Showroom in Bandarawela. Premium bikes, genuine parts, and expert service.">
+    <title>ABH Motors | Authorized Yamaha Showroom</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --yamaha-blue: #003399;
+            --yamaha-dark: #000033;
+            --yamaha-red: #e60012;
+            --yamaha-white: #ffffff;
+            --yamaha-gray: #f5f5f5;
+            --yamaha-black: #1a1a1a;
+            --price-blue: #003366;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--yamaha-black);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--yamaha-dark) 0%, var(--yamaha-blue) 100%);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--yamaha-white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo::before {
+            content: "🏍️";
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--yamaha-white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--yamaha-red);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--yamaha-red);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--yamaha-white);
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(0,0,51,0.8) 0%, rgba(0,51,153,0.8) 100%), 
+                        url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--yamaha-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 50px 50px;
+            opacity: 0.3;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--yamaha-red);
+            color: var(--yamaha-white);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(230,0,18,0.4);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(230,0,18,0.6);
+            background: transparent;
+            border-color: var(--yamaha-red);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--yamaha-blue);
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--yamaha-red);
+            border-radius: 2px;
+        }
+
+        /* Bikes Section */
+        .bike-category {
+            margin-bottom: 4rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, var(--yamaha-blue) 0%, var(--yamaha-dark) 100%);
+            border-radius: 10px;
+            color: white;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .yamaha-logo-small {
+            width: 100px;
+            height: auto;
+        }
+
+        .bikes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .bike-card {
+            background: var(--yamaha-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
+            border: 1px solid rgba(0,51,153,0.1);
+        }
+
+        .bike-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,51,153,0.2);
+        }
+
+        .bike-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--yamaha-blue), var(--yamaha-red));
+        }
+
+        .bike-image {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            padding: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .bike-card:hover .bike-image {
+            transform: scale(1.05);
+        }
+
+        .bike-info {
+            padding: 1.5rem;
+        }
+
+        .color-name {
+            text-align: center;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .price-tag {
+            text-align: center;
+            color: var(--price-blue);
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin: 1rem 0;
+            font-family: 'Arial Black', Arial, sans-serif;
+        }
+
+        .terms {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        .btn-secondary {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--yamaha-blue);
+            color: var(--yamaha-white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid var(--yamaha-blue);
+            margin-top: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: var(--yamaha-blue);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--yamaha-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--yamaha-white);
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background: var(--yamaha-blue);
+            transition: height 0.3s;
+            z-index: 0;
+        }
+
+        .service-card:hover::after {
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            color: var(--yamaha-white);
+        }
+
+        .service-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: var(--yamaha-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .service-card:hover h3 {
+            color: var(--yamaha-white);
+        }
+
+        .service-card p {
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        .service-card:hover p {
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Offers Section */
+        .offers-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .offers-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .offer-slide {
+            min-width: 100%;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--yamaha-white);
+            position: relative;
+        }
+
+        .offer-slide:nth-child(1) {
+            background: linear-gradient(135deg, var(--yamaha-blue) 0%, var(--yamaha-dark) 100%);
+        }
+
+        .offer-slide:nth-child(2) {
+            background: linear-gradient(135deg, var(--yamaha-red) 0%, #990000 100%);
+        }
+
+        .offer-slide:nth-child(3) {
+            background: linear-gradient(135deg, #2c3e50 0%, var(--yamaha-black) 100%);
+        }
+
+        .offer-slide:nth-child(4) {
+            background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+        }
+
+        .offer-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .offer-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .slider-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--yamaha-blue);
+            background: var(--yamaha-white);
+            color: var(--yamaha-blue);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn:hover {
+            background: var(--yamaha-blue);
+            color: var(--yamaha-white);
+            transform: scale(1.1);
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: var(--yamaha-red);
+            transform: scale(1.2);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--yamaha-blue);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .about-features li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .about-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--yamaha-red);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--yamaha-gray) 0%, #e8e8e8 100%);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            color: var(--yamaha-blue);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: var(--yamaha-white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .info-item:hover {
+            transform: translateX(10px);
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--yamaha-red);
+        }
+
+        .info-content h4 {
+            color: var(--yamaha-blue);
+            margin-bottom: 0.3rem;
+        }
+
+        .info-content p, .info-content a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .info-content a:hover {
+            color: var(--yamaha-red);
+        }
+
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: 300px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--yamaha-white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--yamaha-blue);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--yamaha-blue);
+            box-shadow: 0 0 0 3px rgba(0,51,153,0.1);
+        }
+
+        .error-message {
+            color: var(--yamaha-red);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .form-group.error input,
+        .form-group.error textarea {
+            border-color: var(--yamaha-red);
+        }
+
+        .form-group.error .error-message {
+            display: block;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: none;
+            border-left: 4px solid #28a745;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--yamaha-blue);
+            color: var(--yamaha-white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background: var(--yamaha-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,51,153,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--yamaha-dark);
+            color: var(--yamaha-white);
+            padding: 3rem 5% 1rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--yamaha-red);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--yamaha-white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--yamaha-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Scroll Animation */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--yamaha-dark);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+                gap: 1.5rem;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .offer-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .category-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .bikes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .bike-card {
+                margin: 0 1rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .price-tag {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">ABH Motors</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#bikes">Bikes</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to ABH Motors</h1>
+            <p>Authorized Yamaha Showroom</p>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">"Experience the Power. Feel the Ride."</p>
+            <a href="#bikes" class="btn-primary">Explore Bikes</a>
+        </div>
+    </section>
+
+    <!-- Featured Bikes Section -->
+    <section id="bikes" class="scroll-reveal">
+        <h2 class="section-title">Our Yamaha Models</h2>
+        
+        <!-- MT-15 Version 2.0 -->
+        <div class="bike-category">
+            <div class="category-header">
+                <div class="category-title">MT - 15 Version 2.0</div>
+                <div style="font-size: 1.5rem; font-weight: bold;">YAMAHA</div>
+            </div>
+            <div class="bikes-grid">
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/mt-15-v2/color/black-metallic.png" alt="MT-15 Black Metallic" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Black Metallic</div>
+                    </div>
+                </div>
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/mt-15-v2/color/pastel-dark-grey.png" alt="MT-15 Pastel Dark Grey" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Pastel Dark Grey</div>
+                    </div>
+                </div>
+            </div>
+            <div class="price-tag">Rs. 1,479,900.00</div>
+            <div class="terms">Above prices are with VAT @18%<br>*Terms & Conditions apply (any other duty enforced by the government will apply)</div>
+        </div>
+
+        <!-- R15 Version 4.0 -->
+        <div class="bike-category">
+            <div class="category-header">
+                <div class="category-title">R15 - Version 4.0</div>
+                <div style="font-size: 1.5rem; font-weight: bold;">YAMAHA</div>
+            </div>
+            <div class="bikes-grid">
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/r15-v4/color/racing-blue.png" alt="R15 Deep Purplish Blue Metallic" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Deep Purplish Blue Metallic</div>
+                    </div>
+                </div>
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/r15-v4/color/metallic-black.png" alt="R15 Low Gloss Black" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Low Gloss Black</div>
+                    </div>
+                </div>
+            </div>
+            <div class="price-tag">Rs. 1,654,900.00</div>
+            <div class="terms">Above prices are with VAT @18%<br>*Terms & Conditions apply (any other duty enforced by the government will apply)</div>
+        </div>
+
+        <!-- Ray ZR 125 FI -->
+        <div class="bike-category">
+            <div class="category-header">
+                <div class="category-title">Ray ZR 125 FI</div>
+                <div style="font-size: 1.5rem; font-weight: bold;">YAMAHA</div>
+            </div>
+            <div class="bikes-grid">
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/ray-zr-125/color/cyan.png" alt="Ray ZR Cyan Metallic" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Cyan Metallic</div>
+                    </div>
+                </div>
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/ray-zr-125/color/black.png" alt="Ray ZR Black Metallic" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Black Metallic</div>
+                    </div>
+                </div>
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/ray-zr-125/color/red.png" alt="Ray ZR Mat Dull Red Metallic" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Mat Dull Red Metallic</div>
+                    </div>
+                </div>
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/ray-zr-125/color/yellow.png" alt="Ray ZR Reddish Yellow" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Reddish Yellow</div>
+                    </div>
+                </div>
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/ray-zr-125/color/blue.png" alt="Ray ZR Deep Purplish Blue Metallic" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Deep Purplish Blue Metallic</div>
+                    </div>
+                </div>
+            </div>
+            <div class="price-tag">Rs. 824,900.00</div>
+            <div class="terms">Above prices are with VAT @18%<br>*Terms & Conditions apply (any other duty enforced by the government will apply)</div>
+        </div>
+
+        <!-- Ray ZR 125 Street Rally -->
+        <div class="bike-category">
+            <div class="category-header">
+                <div class="category-title">Ray ZR 125 Street Rally</div>
+                <div style="font-size: 1.5rem; font-weight: bold;">YAMAHA</div>
+            </div>
+            <div class="bikes-grid">
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/ray-zr-street-rally/color/orange.png" alt="Street Rally Mat Dull Orange Metallic" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Mat Dull Orange Metallic</div>
+                    </div>
+                </div>
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/ray-zr-street-rally/color/black.png" alt="Street Rally Black Metallic" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Black Metallic</div>
+                    </div>
+                </div>
+            </div>
+            <div class="price-tag">Rs. 854,900.00</div>
+            <div class="terms">Above prices are with VAT @18%<br>*Terms & Conditions apply (any other duty enforced by the government will apply)</div>
+        </div>
+
+        <!-- Ray ZR 113 Disc -->
+        <div class="bike-category">
+            <div class="category-header">
+                <div class="category-title">Ray ZR 113 Disc</div>
+                <div style="font-size: 1.5rem; font-weight: bold;">YAMAHA</div>
+            </div>
+            <div class="bikes-grid">
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/ray-zr-113/color/green.png" alt="Ray ZR 113 High Sparkle Green" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">High Sparkle Green</div>
+                    </div>
+                </div>
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/ray-zr-113/color/cyan.png" alt="Ray ZR 113 Cyan Metallic" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Cyan Metallic</div>
+                    </div>
+                </div>
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/ray-zr-113/color/blue.png" alt="Ray ZR 113 Mat Dark Purplish Blue Metallic" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Mat Dark Purplish Blue Metallic</div>
+                    </div>
+                </div>
+            </div>
+            <div class="price-tag">Rs. 689,900.00</div>
+            <div class="terms">Above prices are with VAT @18%<br>*Terms & Conditions apply (any other duty enforced by the government will apply)</div>
+        </div>
+
+        <!-- Ray ZR 113 Street Rally -->
+        <div class="bike-category">
+            <div class="category-header">
+                <div class="category-title">Ray ZR 113 Street Rally</div>
+                <div style="font-size: 1.5rem; font-weight: bold;">YAMAHA</div>
+            </div>
+            <div class="bikes-grid">
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/ray-zr-113-street-rally/color/blue.png" alt="Ray ZR 113 Street Rally Deep Purplish Blue Metallic" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Deep Purplish Blue Metallic</div>
+                    </div>
+                </div>
+                <div class="bike-card">
+                    <img src="https://www.yamaha-motor-india.com/assets/images/ray-zr-113-street-rally/color/gray.png" alt="Ray ZR 113 Street Rally Mat Gray Metallic" class="bike-image">
+                    <div class="bike-info">
+                        <div class="color-name">Mat Gray Metallic</div>
+                    </div>
+                </div>
+            </div>
+            <div class="price-tag">Rs. 719,900.00</div>
+            <div class="terms">Above prices are with VAT @18%<br>*Terms & Conditions apply (any other duty enforced by the government will apply)</div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services scroll-reveal">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">🏍️</span>
+                <h3>Bike Sales</h3>
+                <p>Authorized Yamaha dealer offering the latest models with genuine warranty and competitive pricing.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">🎯</span>
+                <h3>Test Ride Booking</h3>
+                <p>Experience your dream bike before purchase. Schedule test rides at your convenience.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">🔧</span>
+                <h3>Genuine Spare Parts</h3>
+                <p>100% authentic Yamaha spare parts and accessories to keep your bike in perfect condition.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">⚙️</span>
+                <h3>Service & Maintenance</h3>
+                <p>Expert technicians and state-of-the-art service center for all your maintenance needs.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">💰</span>
+                <h3>Finance & EMI Options</h3>
+                <p>Flexible financing solutions with low EMI options and quick loan approvals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section id="offers" class="scroll-reveal">
+        <h2 class="section-title">Special Offers</h2>
+        <div class="offers-slider">
+            <div class="offers-container" id="offersContainer">
+                <div class="offer-slide">
+                    <div class="offer-content">
+                        <h3>🎉 Festive Season Special</h3>
+                        <p>Get up to Rs. 50,000/- off on selected models. Limited time offer!</p>
+                        <a href="#contact" class="btn-primary">Claim Offer</a>
+                    </div>
+                </div>
+                
+                <div class="offer-slide">
+                    <div class="offer-content">
+                        <h3>🔄 Exchange Bonus</h3>
+                        <p>Exchange your old bike and get additional Rs. 25,000/- bonus on new purchase.</p>
+                        <a href="#contact" class="btn-primary">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="offer-slide">
+                    <div class="offer-content">
+                        <h3>💳 Zero Down Payment</h3>
+                        <p>Drive home your favorite Yamaha with zero down payment and low interest rates.</p>
+                        <a href="#contact" class="btn-primary">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="offer-slide">
+                    <div class="offer-content">
+                        <h3>🛡️ Free Insurance</h3>
+                        <p>Complimentary 1-year comprehensive insurance on all new bookings this month.</p>
+                        <a href="#contact" class="btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slider-controls">
+            <button class="slider-btn" id="prevBtn">❮</button>
+            <button class="slider-btn" id="nextBtn">❯</button>
+        </div>
+        
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="scroll-reveal">
+        <h2 class="section-title">About ABH Motors</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Your Trusted Yamaha Partner in Bandarawela</h3>
+                <p>ABH Motors is an authorized dealer of Yamaha Motor Company, committed to delivering excellence in two-wheeler sales and service. With years of experience in the automotive industry, we have established ourselves as the premier destination for Yamaha enthusiasts in the region.</p>
+                <p>Our mission is to provide world-class products and exceptional customer service, ensuring every rider experiences the joy of Yamaha engineering. We believe in building lasting relationships with our customers through transparency, integrity, and dedication.</p>
+                
+                <ul class="about-features">
+                    <li>Authorized Yamaha Dealer with Genuine Products</li>
+                    <li>Customer Satisfaction is Our Priority</li>
+                    <li>Years of Industry Experience</li>
+                    <li>Expert Technical Support Team</li>
+                    <li>Comprehensive After-Sales Service</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="ABH Motors Showroom">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact scroll-reveal">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                
+                <div class="info-item">
+                    <span class="info-icon">📍</span>
+                    <div class="info-content">
+                        <h4>Address</h4>
+                        <p>No.46/48 Park Road, Bandarawela</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-icon">📞</span>
+                    <div class="info-content">
+                        <h4>Phone</h4>
+                        <a href="tel:0773490594">0773490594</a>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-icon">✉️</span>
+                    <div class="info-content">
+                        <h4>Email</h4>
+                        <a href="mailto:yamahaabh@gmail.com">yamahaabh@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15844.123456789012!2d80.99123456789012!3d6.831234567890123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDknNTIuNCJOIDgwwrA1OScyOC40IkU!5e0!3m2!1sen!2slk!4v1234567890123!5m2!1sen!2slk" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <div class="success-message" id="successMessage">
+                    ✅ Thank you! Your message has been sent successfully. We'll contact you soon.
+                </div>
+                
+                <form id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name">
+                        <span class="error-message">Please enter your full name</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address">
+                        <span class="error-message">Please enter a valid email address</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit phone number">
+                        <span class="error-message">Please enter a valid 10-digit phone number</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="4" placeholder="How can we help you?"></textarea>
+                        <span class="error-message">Please enter your message</span>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ABH Motors</h4>
+                <p>Authorized Yamaha Showroom<br>
+                No.46/48 Park Road, Bandarawela<br>
+                Phone: 0773490594</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">📘</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="WhatsApp">💬</a>
+                    <a href="#" title="YouTube">▶️</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="#home">Home</a><br>
+                <a href="#bikes">Our Bikes</a><br>
+                <a href="#services">Services</a><br>
+                <a href="#offers">Offers</a><br>
+                <a href="#contact">Contact</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Services</h4>
+                <p><a href="#">New Bikes</a><br>
+                <a href="#">Service Center</a><br>
+                <a href="#">Spare Parts</a><br>
+                <a href="#">Test Ride</a><br>
+                <a href="#">Finance</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Opening Hours</h4>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                Saturday: 9:00 AM - 5:00 PM<br>
+                Sunday: 10:00 AM - 2:00 PM<br>
+                <em>Closed on Public Holidays</em></p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 ABH Motors | Authorized Yamaha Dealer | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Offers Slider
+        const offersContainer = document.getElementById('offersContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const sliderDots = document.getElementById('sliderDots');
+        
+        let currentSlide = 0;
+        const totalSlides = 4;
+
+        // Create dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            sliderDots.appendChild(dot);
+        }
+
+        function updateSlider() {
+            offersContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Auto-slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Contact Form Validation
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            
+            // Reset previous errors
+            document.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+            
+            // Validate Name
+            const name = document.getElementById('name');
+            if (name.value.trim() === '') {
+                showError(name, 'Please enter your full name');
+                isValid = false;
+            }
+            
+            // Validate Email
+            const email = document.getElementById('email');
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email.value.trim())) {
+                showError(email, 'Please enter a valid email address');
+                isValid = false;
+            }
+            
+            // Validate Phone (10 digits)
+            const phone = document.getElementById('phone');
+            const phonePattern = /^\d{10}$/;
+            if (!phonePattern.test(phone.value.trim())) {
+                showError(phone, 'Please enter a valid 10-digit phone number');
+                isValid = false;
+            }
+            
+            // Validate Message
+            const message = document.getElementById('message');
+            if (message.value.trim() === '') {
+                showError(message, 'Please enter your message');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Show success message
+                successMessage.style.display = 'block';
+                contactForm.reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+                
+                // Scroll to top of form
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+
+        function showError(input, message) {
+            const formGroup = input.closest('.form-group');
+            formGroup.classList.add('error');
+            formGroup.querySelector('.error-message').textContent = message;
+        }
+
+        // Real-time validation
+        document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(field => {
+            field.addEventListener('blur', function() {
+                validateField(this);
+            });
+            
+            field.addEventListener('input', function() {
+                if (this.closest('.form-group').classList.contains('error')) {
+                    validateField(this);
+                }
+            });
+        });
+
+        function validateField(field) {
+            const formGroup = field.closest('.form-group');
+            let isValid = true;
+            
+            if (field.id === 'name') {
+                if (field.value.trim() === '') isValid = false;
+            } else if (field.id === 'email') {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(field.value.trim())) isValid = false;
+            } else if (field.id === 'phone') {
+                const phonePattern = /^\d{10}$/;
+                if (!phonePattern.test(field.value.trim())) isValid = false;
+            } else if (field.id === 'message') {
+                if (field.value.trim() === '') isValid = false;
+            }
+            
+            if (isValid) {
+                formGroup.classList.remove('error');
+            }
+        }
+
+        // Scroll Animation
+        const scrollReveal = () => {
+            const elements = document.querySelectorAll('.scroll-reveal');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', scrollReveal);
+        window.addEventListener('load', scrollReveal);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add sticky header effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
